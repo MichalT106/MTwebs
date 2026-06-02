@@ -8,7 +8,13 @@ const translations = {
         "hero.subtitleMiddle": " & ",
         "hero.cv": "See CV",
         "school.title": "School Projects",
+        "school.carousel.hint": "Swipe or use arrows to explore",
+        "school.carousel.prev": "Previous project",
+        "school.carousel.next": "Next project",
         "experience.title": "Work Experience",
+        "experience.current": "Current",
+        "experience.previous": "Previous",
+        "experience.viewDetails": "View details →",
         "nav.home": "Home",
         "nav.school": "School Projects",
         "nav.experience": "Work Experience",
@@ -52,24 +58,31 @@ const translations = {
         "school.project1.subtitle": "48-hour game jam (journalism theme) — Call For Justice",
         "school.project1.desc": "48-hour game challenge",
         "school.project1.tag1": "Unity",
-        "school.project1.tag2": "2D Story Game",
-        "school.project1.tag3": "Game Jam",
+        "school.project1.tag2": "C#",
+        "school.project1.tag3": "2D Game Development",
+        "school.project1.tag4": "Rapid Prototyping",
         "school.project1.imageAlt": "Game Days — Call For Justice project preview",
 
         "school.project2.title": "CarInsight – Live IT Projects TUKE",
         "school.project2.desc": "Vehicle management app",
         "school.project2.tag1": "React Native",
         "school.project2.tag2": "FastAPI",
+        "school.project2.tag3": "PostgreSQL",
+        "school.project2.tag4": "AWS Cognito",
+        "school.project2.tag5": "DynamoDB",
+        "school.project2.tag6": "Docker",
         "school.project1.cta": "View details",
         "school.project2.cta": "View details",
         "school.project3.cta": "View details",
 
         "school.project3.title": "Detection of Formal Errors in Final Theses using XML Technologies",
-        "school.project3.desc": "CI-ready LaTeX → XML validation toolchain",
-        "school.project3.tag1": "XML + XPath rules",
-        "school.project3.tag2": "GitLab CI/CD",
-        "school.project3.tag3": "LaTeXML",
-        "school.project3.tag4": "Python + SaxonC",
+        "school.project3.desc": "Diploma thesis",
+        "school.project3.tag1": "LaTeXML",
+        "school.project3.tag2": "Python + SaxonC",
+        "school.project3.tag3": "GitLab CI/CD",
+        "school.project3.tag4": "Docker",
+        "school.project3.tag5": "XML + XPath",
+        "school.project3.tag6": "LaTeX",
         "school.project2.imageAlt": "CarInsight — project poster",
         "school.project3.imageAlt": "Diploma thesis — LaTeX/XML formal error detection toolchain",
 
@@ -296,7 +309,13 @@ const translations = {
         "hero.cv": "Prezrieť životopis",
         "projects.title": "Vybrané projekty",
         "school.title": "Školské projekty",
+        "school.carousel.hint": "Potiahnite alebo použite šípky",
+        "school.carousel.prev": "Predchádzajúci projekt",
+        "school.carousel.next": "Ďalší projekt",
         "experience.title": "Pracovné skúsenosti",
+        "experience.current": "Aktuálne",
+        "experience.previous": "Predchádzajúca",
+        "experience.viewDetails": "Zobraziť detaily →",
         "nav.home": "Domov",
         "nav.school": "Školské projekty",
         "nav.experience": "Pracovné skúsenosti",
@@ -340,24 +359,31 @@ const translations = {
         "school.project1.subtitle": "48-hodinová herná výzva (téma žurnalistika) — Call For Justice",
         "school.project1.desc": "48-hodinová herná výzva",
         "school.project1.tag1": "Unity",
-        "school.project1.tag2": "2D príbehová hra",
-        "school.project1.tag3": "Game Jam",
+        "school.project1.tag2": "C#",
+        "school.project1.tag3": "2D herný vývoj",
+        "school.project1.tag4": "Rýchle prototypovanie",
         "school.project1.imageAlt": "Game Days — ukážka projektu Call For Justice",
 
         "school.project2.title": "CarInsight – Živé IT projekty TUKE",
         "school.project2.desc": "Aplikácia na správu vozidiel",
         "school.project2.tag1": "React Native",
         "school.project2.tag2": "FastAPI",
+        "school.project2.tag3": "PostgreSQL",
+        "school.project2.tag4": "AWS Cognito",
+        "school.project2.tag5": "DynamoDB",
+        "school.project2.tag6": "Docker",
         "school.project1.cta": "Zobraziť detail",
         "school.project2.cta": "Zobraziť detail",
         "school.project3.cta": "Zobraziť detail",
 
         "school.project3.title": "Detekcia formálnych chýb v záverečných prácach pomocou XML technológií",
-        "school.project3.desc": "CI-ready LaTeX → XML validačný toolchain",
-        "school.project3.tag1": "XML + XPath pravidlá",
-        "school.project3.tag2": "GitLab CI/CD",
-        "school.project3.tag3": "LaTeXML",
-        "school.project3.tag4": "Python + SaxonC",
+        "school.project3.desc": "Diplomová práca",
+        "school.project3.tag1": "LaTeXML",
+        "school.project3.tag2": "Python + SaxonC",
+        "school.project3.tag3": "GitLab CI/CD",
+        "school.project3.tag4": "Docker",
+        "school.project3.tag5": "XML + XPath",
+        "school.project3.tag6": "LaTeX",
         "school.project2.imageAlt": "CarInsight — plagát projektu",
         "school.project3.imageAlt": "Diplomová práca — toolchain na detekciu formálnych chýb (LaTeX/XML)",
 
@@ -600,6 +626,12 @@ function applyTranslations(lang) {
         const key = element.getAttribute('data-i18n-alt');
         if (dict[key]) {
             element.setAttribute('alt', dict[key]);
+        }
+    });
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+        const key = element.getAttribute('data-i18n-aria-label');
+        if (dict[key]) {
+            element.setAttribute('aria-label', dict[key]);
         }
     });
     document.querySelectorAll('.language-btn').forEach(btn => {
