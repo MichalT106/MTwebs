@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { SITE_URL } from '../lib/assetPath';
+import { absoluteUrl } from '../lib/assetPath';
 
 interface SEOProps {
   title: string;
@@ -13,10 +13,10 @@ export function SEO({
   title,
   description = 'Portfolio of Ing. Michal Tkáč — Data Engineer showcasing work experience and school projects.',
   path = '',
-  image = `${SITE_URL}/images/profile_picture.jfif`,
+  image = absoluteUrl('images/profile_picture.jfif'),
   type = 'website',
 }: SEOProps) {
-  const url = `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+  const url = path === '/' ? absoluteUrl('') : absoluteUrl(path.replace(/^\//, ''));
 
   return (
     <Helmet>

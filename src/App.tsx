@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { AppProvider } from './context/AppContext';
 import { AppLayout } from './components/AppLayout';
 import { HashScrollHandler } from './components/HashScrollHandler';
+import { ROUTER_BASENAME } from './lib/assetPath';
 import HomePage from './pages/HomePage';
 
 const BuildMindPage = lazy(() => import('./pages/experiences/BuildMindPage'));
@@ -43,7 +44,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <AppProvider>
-        <BrowserRouter basename="/MTweb">
+        <BrowserRouter basename={ROUTER_BASENAME}>
           <HashScrollHandler />
           <AppRoutes />
         </BrowserRouter>

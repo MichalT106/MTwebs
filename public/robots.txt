@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://michalt106.github.io/MTweb/sitemap.xml
+Sitemap: https://michaltkac.com/MTweb/sitemap.xml
