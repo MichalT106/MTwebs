@@ -3,11 +3,15 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "homepage": "https://michaltkac.com/MTweb",
+  "homepage": "https://michaltkac.com",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/postbuild.mjs",
+    "dev:landing": "vite --config vite.config.landing.ts",
+    "build": "node scripts/build-all.mjs",
+    "build:landing": "vite build --config vite.config.landing.ts",
+    "build:portfolio": "tsc -b && vite build && node scripts/postbuild.mjs",
     "preview": "vite preview",
+    "preview:site": "npx --yes serve dist -l 4173",
     "lint": "eslint ."
   },
   "dependencies": {

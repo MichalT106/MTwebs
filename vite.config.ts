@@ -8,7 +8,8 @@ export default defineConfig({
   plugins: [react()],
   base,
   build: {
-    outDir: 'dist',
+    outDir: 'dist/MTweb',
+    emptyOutDir: false,
     sourcemap: false,
     rollupOptions: {
       output: {
