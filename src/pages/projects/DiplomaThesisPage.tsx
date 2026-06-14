@@ -19,7 +19,7 @@ export default function DiplomaThesisPage() {
 
   return (
     <>
-      <SEO title="MTweb | Diploma Thesis Project" path="/projects/DIPLOMA_THESIS" />
+      <SEO title="Portfolio | Diploma Thesis Project" path="/projects/DIPLOMA_THESIS" />
       <DetailPageLayout
         title={t('project3.title')}
         sidebar={

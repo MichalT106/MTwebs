@@ -13,7 +13,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-8xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.2fr_1fr] lg:px-8">
         <div>
           <p className="text-2xl font-bold text-fg">
-            MT<span className="text-accent">web</span>
+            Port<span className="text-accent">folio</span>
           </p>
           <p className="mt-3 max-w-sm text-fg-muted">Ing. Michal Tkáč</p>
         </div>

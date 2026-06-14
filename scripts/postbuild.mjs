@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { BASE_PATH } from './siteConfig.mjs';
 
-const portfolioDist = join(process.cwd(), 'dist', 'MTweb');
+const portfolioDist = join(process.cwd(), 'dist', 'Portfolio');
 const indexPath = join(portfolioDist, 'index.html');
 
 /** Restore client-side routes from GitHub Pages ?/path query URLs. */
@@ -19,4 +19,4 @@ let indexHtml = readFileSync(indexPath, 'utf8');
 indexHtml = injectSpaRestoreScript(indexHtml);
 writeFileSync(indexPath, indexHtml);
 
-console.log(`Injected SPA restore script into dist/MTweb/index.html`);
+console.log(`Injected SPA restore script into dist/Portfolio/index.html`);

@@ -19,7 +19,7 @@ export default function GameDaysPage() {
 
   return (
     <>
-      <SEO title="MTweb | Call For Justice Project" path="/projects/GAMEDAYS" />
+      <SEO title="Portfolio | Call For Justice Project" path="/projects/GAMEDAYS" />
       <DetailPageLayout
         title={t('project1.title')}
         sidebar={

@@ -2,13 +2,13 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // Keep in sync with scripts/siteConfig.mjs (BASE_PATH)
-const base = '/MTweb/';
+const base = '/Portfolio/';
 
 export default defineConfig({
   plugins: [react()],
   base,
   build: {
-    outDir: 'dist/MTweb',
+    outDir: 'dist/Portfolio',
     emptyOutDir: false,
     sourcemap: false,
     rollupOptions: {

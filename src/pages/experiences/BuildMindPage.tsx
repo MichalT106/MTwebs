@@ -19,7 +19,7 @@ export default function BuildMindPage() {
 
   return (
     <>
-      <SEO title="MTweb | BuiltMind Experience" path="/experiences/BUILDMIND" />
+      <SEO title="Portfolio | BuiltMind Experience" path="/experiences/BUILDMIND" />
       <DetailPageLayout title={t('experience.job2.title')}>
         <ContentBlock>
           <dl className="grid gap-6 sm:grid-cols-2">

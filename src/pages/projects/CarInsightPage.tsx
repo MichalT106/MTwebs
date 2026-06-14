@@ -13,7 +13,7 @@ export default function CarInsightPage() {
 
   return (
     <>
-      <SEO title="MTweb | CarInsight Project" path="/projects/CARINSIGHT" />
+      <SEO title="Portfolio | CarInsight Project" path="/projects/CARINSIGHT" />
       <DetailPageLayout
         title="CarInsight"
         sidebar={

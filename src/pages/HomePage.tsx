@@ -6,7 +6,7 @@ import { Projects } from '../components/Projects';
 export default function HomePage() {
   return (
     <>
-      <SEO title="MTweb | Portfolio" path="/" />
+      <SEO title="Portfolio | Home" path="/" />
       <Hero />
       <Experience />
       <Projects />

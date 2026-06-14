@@ -25,7 +25,7 @@ export default function WebastoPage() {
 
   return (
     <>
-      <SEO title="MTweb | Webasto Experience" path="/experiences/WEBASTO" />
+      <SEO title="Portfolio | Webasto Experience" path="/experiences/WEBASTO" />
       <DetailPageLayout
         title={t('experience.job1.title')}
         sidebar={

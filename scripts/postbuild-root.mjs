@@ -5,7 +5,7 @@ import { BASE_PATH } from './siteConfig.mjs';
 const dist = join(process.cwd(), 'dist');
 const notFoundPath = join(dist, '404.html');
 
-/** Site-wide 404: route /MTweb/* to portfolio SPA, everything else to root landing. */
+/** Site-wide 404: route /Portfolio/* to portfolio SPA, everything else to root landing. */
 const root404Page = `<!DOCTYPE html>
 <html lang="en">
   <head>

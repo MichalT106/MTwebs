@@ -63,7 +63,7 @@ export function Navigation() {
           onClick={goHomeTop}
           className="shrink-0 text-lg font-bold tracking-tight text-fg transition-colors duration-150 hover:text-accent"
         >
-          MT<span className="text-accent">web</span>
+          Port<span className="text-accent">folio</span>
         </Link>
 
         <div className="hidden min-w-0 flex-1 justify-center lg:flex">

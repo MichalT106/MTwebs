@@ -1,0 +1,23 @@
+/* Additional custom styles if needed - most are inline in HTML */
+/* This file is optional since styles are included in the HTML head */
+
+.heart-beat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.pulse-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(236, 72, 153, 0.5);
+    animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}

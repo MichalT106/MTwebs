@@ -18,4 +18,4 @@ console.log('Running postbuild scripts…');
 run('node', ['scripts/postbuild.mjs']);
 run('node', ['scripts/postbuild-root.mjs']);
 
-console.log('Build complete: dist/ (landing) + dist/MTweb/ (portfolio)');
+console.log('Build complete: dist/ (landing) + dist/Portfolio/ (portfolio)');

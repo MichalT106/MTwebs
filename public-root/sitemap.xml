@@ -6,32 +6,37 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://michaltkac.com/MTweb/</loc>
+    <loc>https://michaltkac.com/Portfolio/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://michaltkac.com/MTweb/experiences/BUILDMIND</loc>
+    <loc>https://michaltkac.com/valentinka/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://michaltkac.com/Portfolio/experiences/BUILDMIND</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://michaltkac.com/MTweb/experiences/WEBASTO</loc>
+    <loc>https://michaltkac.com/Portfolio/experiences/WEBASTO</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://michaltkac.com/MTweb/projects/GAMEDAYS</loc>
+    <loc>https://michaltkac.com/Portfolio/projects/GAMEDAYS</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://michaltkac.com/MTweb/projects/CARINSIGHT</loc>
+    <loc>https://michaltkac.com/Portfolio/projects/CARINSIGHT</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://michaltkac.com/MTweb/projects/DIPLOMA_THESIS</loc>
+    <loc>https://michaltkac.com/Portfolio/projects/DIPLOMA_THESIS</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
