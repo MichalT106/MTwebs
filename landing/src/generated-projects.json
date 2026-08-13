@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "projects": [
+    {
+      "name": "Flowtask",
+      "slug": "flowtask",
+      "href": "/flowtask/",
+      "description": "Task management application with Supabase sync",
+      "category": "Application",
+      "featured": true
+    },
+    {
+      "name": "Portfolio",
+      "slug": "portfolio",
+      "href": "/portfolio/",
+      "description": "Work experience, projects, and CV",
+      "category": "Personal web",
+      "featured": true
+    },
+    {
+      "name": "Valentínka",
+      "slug": "valentinka",
+      "href": "/valentinka/",
+      "description": "Interactive valentine mini web",
+      "category": "Mini web",
+      "featured": true
+    }
+  ]
+}

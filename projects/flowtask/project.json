@@ -1,0 +1,14 @@
+{
+  "name": "Flowtask",
+  "slug": "flowtask",
+  "description": "Task management application with Supabase sync",
+  "type": "vite",
+  "buildCommand": "npm run build",
+  "outputDir": "dist",
+  "category": "Application",
+  "featured": true,
+  "env": [
+    "VITE_SUPABASE_URL",
+    "VITE_SUPABASE_ANON_KEY"
+  ]
+}

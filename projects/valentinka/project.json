@@ -1,0 +1,10 @@
+{
+  "name": "Valentínka",
+  "slug": "valentinka",
+  "description": "Interactive valentine mini web",
+  "type": "static",
+  "sourceDir": ".",
+  "outputDir": ".",
+  "category": "Mini web",
+  "featured": true
+}

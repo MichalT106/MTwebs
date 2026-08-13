@@ -1,0 +1,17 @@
+{
+  "name": "Portfolio",
+  "slug": "portfolio",
+  "description": "Work experience, projects, and CV",
+  "type": "vite",
+  "buildCommand": "npm run build",
+  "outputDir": "dist",
+  "category": "Personal web",
+  "featured": true,
+  "routes": [
+    "experiences/BUILDMIND",
+    "experiences/WEBASTO",
+    "projects/GAMEDAYS",
+    "projects/CARINSIGHT",
+    "projects/DIPLOMA_THESIS"
+  ]
+}

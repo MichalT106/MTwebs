@@ -1,8 +1,26 @@
 import './style.css';
+import generatedProjectMetadata from './generated-projects.json';
 import { getInitialLanguage, saveLanguage, t, type Lang, type TranslationKey } from './i18n';
 
 const THEME_KEY = 'theme';
 type Theme = 'dark' | 'light';
+
+interface LandingProject {
+  name: string;
+  slug: string;
+  href: string;
+  description: string;
+  image?: string;
+  category?: string;
+  featured?: boolean;
+}
+
+interface LandingProjectMetadata {
+  schemaVersion: number;
+  projects: LandingProject[];
+}
+
+const projectMetadata = generatedProjectMetadata as LandingProjectMetadata;
 
 let language = getInitialLanguage();
 
@@ -51,6 +69,43 @@ function applyTranslations(lang: Lang) {
   }
 }
 
+function createTextSpan(className: string, text: string) {
+  const span = document.createElement('span');
+  span.className = className;
+  span.textContent = text;
+  return span;
+}
+
+function createProjectCard(project: LandingProject) {
+  const card = document.createElement('a');
+  card.href = project.href;
+  card.className = 'card card-active';
+
+  if (project.category) {
+    card.appendChild(createTextSpan('badge', project.category));
+  }
+
+  card.appendChild(createTextSpan('card-label', project.name));
+  card.appendChild(createTextSpan('card-desc', project.description));
+
+  const arrow = createTextSpan('card-arrow', '→');
+  arrow.setAttribute('aria-hidden', 'true');
+  card.appendChild(arrow);
+
+  return card;
+}
+
+function renderGeneratedProjects() {
+  const cards = document.querySelector<HTMLElement>('.cards');
+  const projects = projectMetadata.projects.filter((project) => project.name && project.href);
+
+  if (!cards || projects.length === 0) {
+    return;
+  }
+
+  cards.replaceChildren(...projects.map(createProjectCard));
+}
+
 function setupLanguageToggle() {
   const btn = document.getElementById('lang-toggle');
   if (!btn) return;
@@ -80,6 +135,7 @@ function setupThemeToggle() {
   });
 }
 
+renderGeneratedProjects();
 applyTranslations(language);
 setupLanguageToggle();
 setupThemeToggle();

@@ -7,16 +7,17 @@ function run(command, args) {
   }
 }
 
+console.log('Generating landing metadata…');
+run('node', ['scripts/generate-landing-metadata.mjs']);
+
 console.log('Building root landing page…');
 run('vite', ['build', '--config', 'vite.config.landing.ts']);
 
-console.log('Building portfolio application…');
-run('tsc', ['-b']);
-run('vite', ['build']);
+console.log('Building discovered projects…');
+run('node', ['scripts/build-projects.mjs']);
 
 console.log('Running postbuild scripts…');
-run('node', ['scripts/postbuild.mjs']);
-run('node', ['scripts/postbuild-prerender.mjs']);
+run('node', ['scripts/generate-sitemap.mjs']);
 run('node', ['scripts/postbuild-root.mjs']);
 
-console.log('Build complete: dist/ (landing) + dist/Portfolio/ (portfolio)');
+console.log('Build complete: dist/ (landing + discovered projects)');
