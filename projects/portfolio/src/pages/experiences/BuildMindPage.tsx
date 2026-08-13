@@ -44,7 +44,10 @@ export default function BuildMindPage() {
 
         <ContentBlock>
           <BlockTitle>{t('experience.job2.details.intro.title')}</BlockTitle>
-          <p className="prose-body">{t('experience.job2.details.intro.text')}</p>
+          <div className="space-y-3">
+            <p className="prose-body">{t('experience.job2.details.intro.p1')}</p>
+            <p className="prose-body">{t('experience.job2.details.intro.p2')}</p>
+          </div>
         </ContentBlock>
 
         <ContentBlock>

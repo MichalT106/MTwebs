@@ -38,13 +38,14 @@ export const translations = {
         "experience.details.location": "Location",
 
         "experience.job2.position": "Position",
-        "experience.job2.period": "February 2026 – Present",
+        "experience.job2.period": "February 2026 – Jul 2026",
         "experience.job2.title": "Data Engineer",
         "experience.job2.company": "BuiltMind s.r.o.",
         "experience.job2.location": "Home Office",
 
         "experience.job2.details.intro.title": "Role overview",
-        "experience.job2.details.intro.text": "I work on automated collection of real-estate and market data using UiPath workflows and Python-based scrapers. For more complex or unsupported websites, I implement scraping logic in Python (APIs, requests, BeautifulSoup) and deploy it as AWS Lambda functions, with results integrated into downstream data pipelines.",
+        "experience.job2.details.intro.p1": "I worked on automated collection of data from the real estate market and market sources using UiPath workflows and Python scripts. For more complex or unsupported websites, I created scraping solutions in Python (API, requests, BeautifulSoup), which I then deployed as AWS Lambda functions and integrated into data pipelines. Part of my work also involved maintaining and fixing existing scrapers when websites changed, including selector updates, parsing logic, and handling various limitations.",
+        "experience.job2.details.intro.p2": "I was responsible for managing UiPath automations in UiPath Orchestrator and ensuring reliable execution of scheduled jobs. I regularly monitored data quality and consistency in the database and resolved issues that could affect analytical outputs and charts. When needed, I also updated historical data to ensure the long-term correctness of reports. I also participated in testing new versions of the application.",
 
         "experience.job2.details.keyResponsibilities.title": "Key responsibilities",
         "experience.job2.details.keyResponsibilities.item1": "Implement new scraping projects and data pipelines for real-estate and market analytics.",
@@ -56,7 +57,6 @@ export const translations = {
 
         "experience.job2.details.tech.title": "Technologies & tooling",
         "experience.job2.details.tech.subtitle": "Main focus: automated data collection, parsing, orchestration scheduling, and data quality monitoring.",
-        "experience.job2.details.sideNote": "This role is ongoing.",
 
         "school.project1.title": "Game Jam Košice — Game Days",
         "school.project1.subtitle": "48-hour game jam (journalism theme) — Call For Justice",
@@ -340,13 +340,14 @@ export const translations = {
         "experience.details.location": "Miesto",
 
         "experience.job2.position": "Pozícia",
-        "experience.job2.period": "Február 2026 – Súčasnosť",
+        "experience.job2.period": "Február 2026 – Júl 2026",
         "experience.job2.title": "Data Engineer",
         "experience.job2.company": "BuiltMind s.r.o.",
         "experience.job2.location": "Home Office",
 
         "experience.job2.details.intro.title": "Prehľad role",
-        "experience.job2.details.intro.text": "Pracujem na automatizovanom zbere dát z realitného trhu a trhových zdrojov pomocou UiPath workflowov a Python scraperov. Pre zložitejšie alebo nepodporované weby implementujem scraping logiku v Pythone (API, requests, BeautifulSoup) a nasadzujem ju ako AWS Lambda funkcie, pričom výsledky sú napojené na ďalšie dátové pipeline.",
+        "experience.job2.details.intro.p1": "Pracoval som na automatizovanom zbere dát z realitného trhu a trhových zdrojov pomocou UiPath workflowov a Python skriptov. Pre zložitejšie alebo nepodporované webové stránky som vytváral scraping riešenia v Pythone (API, requests, BeautifulSoup), ktoré som následne nasadzoval ako AWS Lambda funkcie a integroval do dátových pipeline. Súčasťou mojej práce bola aj údržba a oprava existujúcich scraperov pri zmenách na webových stránkach vrátane úprav selektorov, parsing logiky a riešenia rôznych obmedzení.",
+        "experience.job2.details.intro.p2": "Zodpovedal som za správu UiPath automatizácií v UiPath Orchestrator a zabezpečenie spoľahlivého spúšťania naplánovaných jobov. Pravidelne som monitoroval kvalitu a konzistenciu dát v databáze a riešil problémy, ktoré mohli ovplyvniť analytické výstupy a grafy. V prípade potreby som aktualizoval aj historické dáta, aby bola zabezpečená dlhodobá správnosť reportov. Zároveň som sa podieľal na testovaní nových verzií aplikácie.",
 
         "experience.job2.details.keyResponsibilities.title": "Kľúčové zodpovednosti",
         "experience.job2.details.keyResponsibilities.item1": "Implementácia nových scraping projektov a dátových pipeline pre realitné a trhové analýzy.",
@@ -358,7 +359,6 @@ export const translations = {
 
         "experience.job2.details.tech.title": "Technológie & nástroje",
         "experience.job2.details.tech.subtitle": "Hlavné zameranie: automatizovaný zber dát, parsing, plánovanie jobov a monitoring kvality dát.",
-        "experience.job2.details.sideNote": "Táto pozícia je aktuálna (prebieha).",
 
 
         "school.project1.title": "Game Jam Košice — Game Days",

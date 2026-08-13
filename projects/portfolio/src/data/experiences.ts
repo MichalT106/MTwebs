@@ -17,7 +17,7 @@ export const experiences: ExperienceEntry[] = [
     id: 'buildmind',
     slug: 'BUILDMIND',
     marker: '02',
-    isCurrent: true,
+    isCurrent: false,
     href: '/experiences/BUILDMIND',
     periodKey: 'experience.job2.period',
     titleKey: 'experience.job2.title',
