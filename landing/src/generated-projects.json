@@ -10,6 +10,14 @@
       "featured": true
     },
     {
+      "name": "Motorcycle Maintenance",
+      "slug": "moto-maintenance",
+      "href": "/moto-maintenance/",
+      "description": "Track motorcycles, mileage, and upcoming service by date or kilometers",
+      "category": "Application",
+      "featured": true
+    },
+    {
       "name": "Portfolio",
       "slug": "portfolio",
       "href": "/portfolio/",

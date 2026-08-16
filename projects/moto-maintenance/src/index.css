@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --color-page: #070b14;
+    --color-surface: #0f1623;
+    --color-surface-raised: #151d2e;
+    --color-surface-overlay: rgba(15, 22, 35, 0.85);
+    --color-fg: #f1f5f9;
+    --color-fg-muted: #94a3b8;
+    --color-fg-subtle: #64748b;
+    --color-accent: #818cf8;
+    --color-accent-hover: #a5b4fc;
+    --color-accent-emerald: #34d399;
+    --color-accent-emerald-muted: rgba(52, 211, 153, 0.15);
+    --color-warning: #fbbf24;
+    --color-warning-muted: rgba(251, 191, 36, 0.15);
+    --color-danger: #f87171;
+    --color-danger-muted: rgba(248, 113, 113, 0.15);
+    --color-border: rgba(148, 163, 184, 0.12);
+    --color-border-strong: rgba(148, 163, 184, 0.22);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.45);
+    --hero-glow: radial-gradient(ellipse 70% 55% at 20% 0%, rgba(99, 102, 241, 0.18), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 10%, rgba(52, 211, 153, 0.1), transparent 55%);
+  }
+
+  html.light {
+    color-scheme: light;
+    --color-page: #f1f5f9;
+    --color-surface: #ffffff;
+    --color-surface-raised: #ffffff;
+    --color-surface-overlay: rgba(255, 255, 255, 0.92);
+    --color-fg: #0f172a;
+    --color-fg-muted: #475569;
+    --color-fg-subtle: #64748b;
+    --color-accent: #4f46e5;
+    --color-accent-hover: #4338ca;
+    --color-accent-emerald: #059669;
+    --color-accent-emerald-muted: rgba(5, 150, 105, 0.1);
+    --color-warning: #d97706;
+    --color-warning-muted: rgba(217, 119, 6, 0.12);
+    --color-danger: #dc2626;
+    --color-danger-muted: rgba(220, 38, 38, 0.1);
+    --color-border: #e2e8f0;
+    --color-border-strong: #cbd5e1;
+    --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 16px rgba(15, 23, 42, 0.04);
+    --shadow-card-hover: 0 4px 20px rgba(15, 23, 42, 0.1);
+    --hero-glow: radial-gradient(ellipse 70% 55% at 20% 0%, rgba(79, 70, 229, 0.08), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 10%, rgba(5, 150, 105, 0.06), transparent 55%);
+  }
+
+  body {
+    @apply bg-page text-fg antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  #root {
+    @apply min-h-dvh;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    color: var(--color-fg);
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-page;
+  }
+}
+
+@layer components {
+  .hero-glow {
+    background: var(--hero-glow);
+  }
+
+  .panel {
+    @apply rounded-2xl border border-border bg-surface shadow-card;
+  }
+
+  .panel-interactive {
+    @apply panel transition-[border-color,box-shadow,transform] duration-200 ease-out;
+  }
+
+  .panel-interactive:hover {
+    @apply border-border-strong shadow-card-hover;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-[background-color,transform,box-shadow] duration-150 ease-out hover:bg-accent-hover hover:shadow-lg active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface-raised px-4 py-2.5 text-sm font-semibold text-fg transition-colors duration-150 hover:border-border-strong hover:bg-page disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-fg-muted transition-colors duration-150 hover:bg-page hover:text-fg disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-danger px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,transform] duration-150 hover:opacity-90 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-fg;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-border bg-page px-3 py-2.5 text-sm text-fg placeholder:text-fg-subtle transition-colors focus:border-accent;
+  }
+
+  .nav-glass {
+    @apply border-b border-border bg-surface-overlay backdrop-blur-xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .panel-interactive:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Motorcycle Maintenance",
+  "slug": "moto-maintenance",
+  "description": "Track motorcycles, mileage, and upcoming service by date or kilometers",
+  "type": "vite",
+  "buildCommand": "npm run build",
+  "outputDir": "dist",
+  "category": "Application",
+  "featured": true,
+  "routes": [
+    "motorcycle/:id"
+  ]
+}
