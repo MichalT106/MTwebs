@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Moon, Sun } from 'lucide-react';
+import { LogOut, Moon, Sun } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
 import { useLocale } from '@/context/LocaleContext';
 import { useTheme } from '@/context/ThemeContext';
 import { cn } from '@/lib/utils';
@@ -7,6 +8,8 @@ import { cn } from '@/lib/utils';
 export function AppHeader() {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLocale();
+  const { user, emailConfirmed, signOut } = useAuth();
+  const showAccount = Boolean(user && emailConfirmed);
 
   return (
     <header className="nav-glass sticky top-0 z-40">
@@ -26,9 +29,27 @@ export function AppHeader() {
           <p className="hidden text-xs text-fg-muted sm:block">{t('app.tagline')}</p>
         </Link>
         <div className="flex items-center gap-2">
-          <a href="/" className="btn-ghost hidden text-xs sm:inline-flex">
-            {t('app.mtwebs')}
-          </a>
+          {showAccount ? (
+            <div className="hidden min-w-0 text-right sm:block">
+              <p className="truncate text-xs font-medium">{user?.email}</p>
+              <p className="text-[0.6875rem] text-fg-muted">{t('auth.signedIn')}</p>
+            </div>
+          ) : null}
+          {showAccount ? (
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={() => void signOut()}
+              aria-label={t('auth.logout')}
+            >
+              <LogOut className="size-4" />
+              <span className="hidden sm:inline">{t('auth.logout')}</span>
+            </button>
+          ) : (
+            <a href="/" className="btn-ghost hidden text-xs sm:inline-flex">
+              {t('app.mtwebs')}
+            </a>
+          )}
           <div
             className="flex overflow-hidden rounded-xl border border-border bg-surface-raised"
             role="group"

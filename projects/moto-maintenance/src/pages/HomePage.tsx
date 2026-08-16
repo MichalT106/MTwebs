@@ -11,7 +11,7 @@ import type { Motorcycle } from '@/types/maintenance';
 
 export function HomePage() {
   const { t, language } = useLocale();
-  const { motorcycles, addMotorcycle, updateMotorcycle, deleteMotorcycle } = useMaintenance();
+  const { motorcycles, addMotorcycle, updateMotorcycle, deleteMotorcycle, loading } = useMaintenance();
   const [formOpen, setFormOpen] = useState(false);
   const [editing, setEditing] = useState<Motorcycle | null>(null);
   const [deleting, setDeleting] = useState<Motorcycle | null>(null);
@@ -25,6 +25,14 @@ export function HomePage() {
     setEditing(motorcycle);
     setFormOpen(true);
   };
+
+  if (loading) {
+    return (
+      <div className="flex min-h-[40vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent border-t-transparent" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

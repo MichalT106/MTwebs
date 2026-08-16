@@ -5,30 +5,29 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useAuth } from '@/context/AuthContext'
 import { supabase } from '@/lib/supabase'
 
 export function PasswordRecoveryForm() {
+  const { recovery, clearRecovery } = useAuth()
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
   const [message, setMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
-  const [active, setActive] = useState(false)
+  const [hashRecovery] = useState(() => window.location.hash.includes('type=recovery'))
+  const [eventRecovery, setEventRecovery] = useState(false)
 
   useEffect(() => {
-    const hash = window.location.hash
-    if (hash.includes('type=recovery')) {
-      setActive(true)
-    }
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event) => {
-      if (event === 'PASSWORD_RECOVERY') setActive(true)
+      if (event === 'PASSWORD_RECOVERY') setEventRecovery(true)
     })
     return () => subscription.unsubscribe()
   }, [])
 
-  if (!active) return null
+  if (!recovery && !hashRecovery && !eventRecovery) return null
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -51,7 +50,8 @@ export function PasswordRecoveryForm() {
     }
     setMessage('Password updated. You can continue using Flowtask.')
     window.history.replaceState({}, '', window.location.pathname)
-    setActive(false)
+    setEventRecovery(false)
+    clearRecovery()
   }
 
   return (

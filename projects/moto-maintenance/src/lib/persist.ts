@@ -125,19 +125,7 @@ export function loadState(): AppState {
       return createInitialState();
     }
 
-    const motorcycles = parsed.motorcycles
-      .map(parseMotorcycle)
-      .filter((bike): bike is Motorcycle => bike !== null);
-    const customCatalogItems = Array.isArray(parsed.customCatalogItems)
-      ? parsed.customCatalogItems
-          .map(parseCustomItem)
-          .filter((item): item is CustomCatalogItem => item !== null)
-      : [];
-
-    return {
-      version: 1,
-      ...migrateLegacyCustomItems(motorcycles, customCatalogItems),
-    };
+    return loadStateFromRaw(parsed);
   } catch {
     return createInitialState();
   }
@@ -149,4 +137,45 @@ export function saveState(state: AppState): void {
   } catch {
     // ignore quota / private mode
   }
+}
+
+export function hasLocalDataToImport(): boolean {
+  const state = loadState();
+  return state.motorcycles.length > 0 || state.customCatalogItems.length > 0;
+}
+
+function cacheKey(userId: string): string {
+  return `moto-maintenance:cache:${userId}`;
+}
+
+export function loadCachedState(userId: string): AppState | null {
+  try {
+    const raw = localStorage.getItem(cacheKey(userId));
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as unknown;
+    if (!isRecord(parsed) || !Array.isArray(parsed.motorcycles)) return null;
+    return loadStateFromRaw(parsed);
+  } catch {
+    return null;
+  }
+}
+
+export function saveCachedState(userId: string, state: AppState): void {
+  try {
+    localStorage.setItem(cacheKey(userId), JSON.stringify(state));
+  } catch {
+    // ignore
+  }
+}
+
+function loadStateFromRaw(parsed: Record<string, unknown>): AppState {
+  const motorcycles = Array.isArray(parsed.motorcycles)
+    ? parsed.motorcycles.map(parseMotorcycle).filter((bike): bike is Motorcycle => bike !== null)
+    : [];
+  const customCatalogItems = Array.isArray(parsed.customCatalogItems)
+    ? parsed.customCatalogItems
+        .map(parseCustomItem)
+        .filter((item): item is CustomCatalogItem => item !== null)
+    : [];
+  return { version: 1, ...migrateLegacyCustomItems(motorcycles, customCatalogItems) };
 }

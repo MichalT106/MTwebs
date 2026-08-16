@@ -25,6 +25,7 @@ export function DashboardPage() {
     updateMaintenanceItem,
     deleteMaintenanceItem,
     completeMaintenanceItem,
+    loading,
   } = useMaintenance();
 
   const motorcycle = id ? getMotorcycle(id) : undefined;
@@ -44,6 +45,14 @@ export function DashboardPage() {
     () => (motorcycle ? summarizeStatuses(motorcycle.maintenanceItems, motorcycle.currentMileage) : null),
     [motorcycle],
   );
+
+  if (loading) {
+    return (
+      <div className="flex min-h-[40vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent border-t-transparent" />
+      </div>
+    );
+  }
 
   if (!id || !motorcycle) {
     return <Navigate to="/" replace />;

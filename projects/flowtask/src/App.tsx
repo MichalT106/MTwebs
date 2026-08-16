@@ -14,14 +14,22 @@ function AuthenticatedApp() {
 }
 
 function AppGate() {
-  const { user, loading } = useAuth()
+  const { user, loading, emailConfirmed, recovery, verificationMode } = useAuth()
 
   if (loading) {
     return <AuthLoadingScreen />
   }
 
-  if (!user) {
+  if (recovery) {
     return <AuthPage />
+  }
+
+  if (!user) {
+    return <AuthPage key={verificationMode ?? 'login'} initialMode={verificationMode ?? 'login'} />
+  }
+
+  if (!emailConfirmed) {
+    return <AuthPage key="unverified" initialMode="unverified" />
   }
 
   return <AuthenticatedApp />

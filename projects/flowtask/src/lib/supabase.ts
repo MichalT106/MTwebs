@@ -23,6 +23,11 @@ function requireEnv(name: ViteSupabaseEnvKey): string {
 const supabaseUrl = requireEnv('VITE_SUPABASE_URL')
 const supabaseAnonKey = requireEnv('VITE_SUPABASE_ANON_KEY')
 
+export function appUrl(): string {
+  if (typeof window === 'undefined') return ''
+  return new URL(import.meta.env.BASE_URL, window.location.origin).toString()
+}
+
 export const supabase: SupabaseClient<Database> = createClient<Database>(
   supabaseUrl,
   supabaseAnonKey,

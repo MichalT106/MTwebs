@@ -60,9 +60,22 @@ npm run dev
 
 Vite embeds `VITE_*` values at build time, which is required for static hosting.
 
-## 6. Optional: Email confirmation
+## 6. Email confirmation
 
-If **Confirm email** is enabled under **Authentication** → **Providers** → **Email**, new users must verify before signing in. Disable it for faster local testing, or keep it for production.
+Enable **Confirm email** under **Authentication** → **Providers** → **Email**.
+
+New users must verify their address before they can open Flowtask or Motorcycle Maintenance. Existing users keep their current verified/unverified status.
+
+Also add both app URLs under **Authentication** → **URL configuration** → **Redirect URLs** (do not remove existing Flowtask URLs):
+
+- `http://localhost:5173/flowtask/`
+- `http://localhost:5173/flowtask/**`
+- `http://localhost:5173/moto-maintenance/`
+- `http://localhost:5173/moto-maintenance/**`
+- `https://michaltkac.com/flowtask/`
+- `https://michaltkac.com/flowtask/**`
+- `https://michaltkac.com/moto-maintenance/`
+- `https://michaltkac.com/moto-maintenance/**`
 
 ## Architecture overview
 
